@@ -56,6 +56,8 @@ class NewBeer extends Component {
         <h1>Add Beer Form</h1>
         {/*need a control form(at) */}
 
+        {/*below info: first will go to onChange method, 
+        then handleSubmit method */}
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">name</label>
           <input
