@@ -23,14 +23,28 @@ class NewBeer extends Component {
     //that the server they build will have
     //how to access those is with the request we send
     //to the end point?
-    //this is a POST request. they always expect the info we will send
+    //this is a POST request. (that allows you to go
+    //to that url.
+    //they always expect the info we will send
     //how to send that? as an additional arg.
     //add an , and an obj. {} after the link here
-    axios.post('https://ih-beers-api2.herokuapp.com/beers/new', {
-      name: this.state.name,
-      description: this.state.description,
-      contributed_by: this.state.contributedBy,
-    });
+    //react code might be in france,
+    //and the API or server can be in china
+    //so in react, we tryin send info that will be updated
+    //in database. below is asynchronous behavior, thus
+    //we use .then catch
+    axios
+      .post('https://ih-beers-api2.herokuapp.com/beers/new', {
+        name: this.state.name,
+        description: this.state.description,
+        contributed_by: this.state.contributedBy,
+      })
+      .then(() => {
+        this.props.history.push('/beers');
+        //simple way to redirect
+        //for previous and current history? doesn't matter
+      })
+      .catch((err) => {});
   };
 
   render() {

@@ -33,8 +33,10 @@ class AllBeers extends Component {
           this.state.listOfBeers.map((oneBeer) => {
             return (
               <div>
-                <img src={oneBeer.image_url} alt="" height="200px" />;
-                <h3>{oneBeer.name}</h3>
+                <Link to={`beers/${oneBeer._id}`}>
+                  <img src={oneBeer.image_url} alt="" height="200px" />;
+                  <h3>{oneBeer.name}</h3>
+                </Link>
               </div>
             );
           })}
