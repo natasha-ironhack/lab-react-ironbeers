@@ -31,4 +31,8 @@ export class SingleBeer extends Component {
   }
 }
 
+//NOTE: creating a component that is managing
+//it's own state, and the information is coming from
+//an external source (API source in componentDidMount)
+
 export default SingleBeer;
